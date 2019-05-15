@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.ArrayList
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,18 +29,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
         //禁用左右滑动切换页签
-        vp.isUserInputEnabled= false
+        vp.isUserInputEnabled = false
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_favorites -> {
-                    vp.setCurrentItem(favoritesTabIndex,false)
+                    vp.setCurrentItem(favoritesTabIndex, false)
                 }
                 R.id.action_schedules -> {
-                    vp.setCurrentItem(schedulesTabIndex,false)
+                    vp.setCurrentItem(schedulesTabIndex, false)
                 }
                 R.id.action_music -> {
-                    vp.setCurrentItem(mineTabIndex,false)
+                    vp.setCurrentItem(mineTabIndex, false)
                 }
             }
             true
@@ -52,17 +52,17 @@ class MainActivity : AppCompatActivity() {
 
         val favoritesFragment = BaseFragment()
         var bundle = Bundle()
-        bundle.putString("title", "favorites")
+        bundle.putString("title", getString(R.string.favorites))
         favoritesFragment.arguments = bundle
 
         val schedulesFragment = BaseFragment()
         bundle = Bundle()
-        bundle.putString("title", "schedules")
+        bundle.putString("title", getString(R.string.schedules))
         schedulesFragment.arguments = bundle
 
         val mineFragment = BaseFragment()
         bundle = Bundle()
-        bundle.putString("title", "mine")
+        bundle.putString("title", getString(R.string.mine))
         mineFragment.arguments = bundle
 
         fragments.add(favoritesFragment)
