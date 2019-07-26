@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val fragments = getFragments()
 
         vp.adapter = object : FragmentStateAdapter(this) {
-            override fun getItem(position: Int): Fragment {
+            override fun createFragment(position: Int): Fragment {
                 return fragments[position]
             }
 
