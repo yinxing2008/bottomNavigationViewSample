@@ -29,22 +29,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         //禁用左右滑动切换页签
-        vp.isUserInputEnabled = false
+//        vp.isUserInputEnabled = false
 
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.action_favorites -> {
-                    vp.setCurrentItem(favoritesTabIndex, false)
-                }
-                R.id.action_schedules -> {
-                    vp.setCurrentItem(schedulesTabIndex, false)
-                }
-                R.id.action_music -> {
-                    vp.setCurrentItem(mineTabIndex, false)
-                }
-            }
-            true
-        }
     }
 
     private fun getFragments(): ArrayList<Fragment> {
